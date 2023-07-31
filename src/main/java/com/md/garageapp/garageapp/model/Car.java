@@ -1,18 +1,26 @@
 package com.md.garageapp.garageapp.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+
+@Entity
 public class Car {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String model;
     private String brand;
 
+    @Column(name="release_year")
     private int year;
     private Color color;
 
     public Car() {
     }
 
-    public Car(long id,String model, String brand, int year, Color color) {
+    public Car(long id, String model, String brand, int year, Color color) {
         this.id = id;
         this.model = model;
         this.brand = brand;
@@ -20,11 +28,11 @@ public class Car {
         this.color = color;
     }
 
-    public long getId(){
+    public long getId() {
         return id;
     }
 
-    public void setId(long id){
+    public void setId(long id) {
         this.id = id;
     }
 
