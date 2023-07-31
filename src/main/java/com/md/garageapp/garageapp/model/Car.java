@@ -2,6 +2,7 @@ package com.md.garageapp.garageapp.model;
 
 public class Car {
 
+    private long id;
     private String model;
     private String brand;
 
@@ -11,11 +12,20 @@ public class Car {
     public Car() {
     }
 
-    public Car(String model, String brand, int year, Color color) {
+    public Car(long id,String model, String brand, int year, Color color) {
+        this.id = id;
         this.model = model;
         this.brand = brand;
         this.year = year;
         this.color = color;
+    }
+
+    public long getId(){
+        return id;
+    }
+
+    public void setId(long id){
+        this.id = id;
     }
 
     public String getModel() {
